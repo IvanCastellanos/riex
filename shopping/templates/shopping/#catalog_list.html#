@@ -1,0 +1,9 @@
+{% for catalog in Products %}
+<img src="{{product.image.url}}"/>
+<h1>{{product.title}}</h1>
+<p>{{product.description}}</p>
+<p>{{product.category}}</p>
+<p>${{product.price}}</p>
+<p>{{product.stock}}</p>
+<p>{{product.weight}} {{product.weight_measurement}}</p>
+{% endfor %}

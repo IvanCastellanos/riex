@@ -1,0 +1,19 @@
+{% extends '__base.html' %}
+
+{% block maincontent %}
+
+<img src="{{Product.image.url}}"/>
+<h1>{{Product.title}}</h1>
+<p>{{Product.description}}</p>
+<p>{{Product.category}}</p>
+<p>${{Product.price}}</p>
+<p>{{Product.stock}}</p>
+<p>{{Product.weight}} {{Product.weight_measurement}}</p>
+
+{% if Is_buying %}
+<h1>AGREGAR AL CARRITO</h1>
+{% endif %}
+
+{% endblock %}
+
+

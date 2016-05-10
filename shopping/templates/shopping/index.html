@@ -1,0 +1,382 @@
+{% extends '__base.html' %}
+
+{% block subtitle %}
+	Panel de Control		
+{% endblock subtitle %}
+{% block page-title %}
+	
+	Dashboard <small>reportes & estadisticas </small>
+			
+{% endblock page-title %}
+{% block control-active %}
+	class="active"
+{% endblock control-active %}
+{% block maincontent %}
+<div class="row">
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 margin-bottom-10">
+					<div class="dashboard-stat blue-madison">
+						<div class="visual">
+							<i class="fa fa-briefcase fa-icon-medium"></i>
+						</div>
+						<div class="details">
+							<div class="number">
+								 $ {{total_sales}}
+							</div>
+							<div class="desc">
+								 Ventas Última Semana
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<div class="dashboard-stat red-intense">
+						<div class="visual">
+							<i class="fa fa-shopping-cart"></i>
+						</div>
+						<div class="details">
+							<div class="number">
+								{{total_orders}}
+							</div>
+							<div class="desc">
+								 Ordenes Totales de esta Semana
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+					<div class="dashboard-stat green-haze">
+						<div class="visual">
+							<i class="fa fa-group fa-icon-medium"></i>
+						</div>
+						<div class="details">
+							<div class="number">
+								 $ {{average_sales}}
+							</div>
+							<div class="desc">
+								 Promedio de dinero por Orden
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6">
+					<!-- Begin: life time stats -->
+					<div class="portlet box blue-steel">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-thumb-tack"></i>Vistazo Rápido
+							</div>
+							
+						</div>
+						<div class="portlet-body">
+							<div class="tabbable-line">
+								<ul class="nav nav-tabs">
+									<li class="active">
+										<a href="#overview_1" data-toggle="tab">
+										Mas Vendido </a>
+									</li>
+									
+									<li>
+										<a href="#overview_2" data-toggle="tab">
+										Nuevos Clientes </a>
+									</li>
+									<li class="dropdown">
+										<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+										Pedidos <i class="fa fa-angle-down"></i>
+										</a>
+										<ul class="dropdown-menu" role="menu">
+											<li>
+												<a href="#overview_4" tabindex="-1" data-toggle="tab">
+												Ultimos 10 pedidos </a>
+											</li>
+											
+										</ul>
+									</li>
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane active" id="overview_1">
+										<div class="table-responsive">
+											<table class="table table-striped table-hover table-bordered">
+											<thead>
+
+											<tr>
+												<th>
+													 Producto
+												</th>
+												<th>
+													 Precio
+												</th>
+												<th>
+													 Vendidos
+												</th>
+												<th>
+												</th>
+											</tr>
+											</thead>
+											<tbody>
+											{% for product in most_sell_products %}
+													<tr>
+												<td>
+													<a href="javascript:;">
+													{{product.title}} </a>
+												</td>
+												<td>
+													 {{product.price}}
+												</td>
+												<td>
+														{{product.number_sales}}
+												</td>
+												<td>
+													<a href="javascript:;" class="btn default btn-xs green-stripe">
+													View </a>
+												</td>
+											</tr>
+												{% endfor %}	
+											
+												
+											
+											
+											</tbody>
+											</table>
+										</div>
+									</div>
+									
+									<div class="tab-pane" id="overview_2">
+										<div class="table-responsive">
+											<table class="table table-striped table-hover table-bordered">
+											<thead>
+											<tr>
+												<th>
+													 Cliente
+												</th>
+												<th>
+													 Ordenes totales
+												</th>
+												<th>
+													 Cantidad total
+												</th>
+												<th>
+												</th>
+											</tr>
+											</thead>
+											<tbody>
+												{% for customer in customers %}
+													<tr>
+												<td>
+													<a href="javascript:;">
+														{{customer.company_name}}
+													 </a>
+												</td>
+												<td>
+													 
+												</td>
+												<td>
+													 
+												</td>
+												<td>
+													<a href="javascript:;" class="btn default btn-xs green-stripe">
+													View </a>
+												</td>
+											</tr>
+												{% endfor %}
+											
+											</tbody>
+											</table>
+										</div>
+									</div>
+									<div class="tab-pane" id="overview_4">
+										<div class="table-responsive">
+											<table class="table table-striped table-hover table-bordered">
+											<thead>
+											<tr>
+												<th>
+													 Orden
+												</th>
+												<th>
+													 Cliente
+												</th>
+												<th>
+													 Cantidad total
+												</th>
+												<th>
+												</th>
+											</tr>
+											</thead>
+											<tbody>
+												{% for order in Orders %}
+													<tr>
+												<td>
+													<a href="javascript:;">
+														{{order.id}}
+													 </a>
+												</td>
+												<td>
+													 
+												</td>
+												<td>
+													 
+												</td>
+												<td>
+													<a href="javascript:;" class="btn default btn-xs green-stripe">
+													View </a>
+												</td>
+											</tr>
+												{% endfor %}
+											
+											</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- End: life time stats -->
+
+				</div>
+				<div class="col-md-6 col-sm-6">
+						<div class="portlet box blue-steel ">
+							<div class="portlet-title">
+								<div class="caption">
+									<i class="icon-share font-blue-steel hide"></i>
+									<span class="caption-subject">Actividad reciente</span>
+								</div>
+								
+							</div>
+							<div class="portlet-body">
+								<div class="scroller" style="height: auto;" data-always-visible="1" data-rail-visible="0">
+									<ul class="feeds">
+										<li>
+											<div class="col1">
+												<div class="cont">
+													<div class="cont-col1">
+														<div class="label label-sm label-info">
+															<i class="fa fa-check"></i>
+														</div>
+													</div>
+													<div class="cont-col2">
+														<div class="desc">
+															 Tienes 4 tareas pendientes 
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col2">
+												<div class="date">
+													 Ahora
+												</div>
+											</div>
+										</li>
+										<li>
+											<a href="javascript:;">
+											<div class="col1">
+												<div class="cont">
+													<div class="cont-col1">
+														<div class="label label-sm label-success">
+															<i class="fa fa-bar-chart-o"></i>
+														</div>
+													</div>
+													<div class="cont-col2">
+														<div class="desc">
+															 Reporte de finanzas de Abril terminado
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col2">
+												<div class="date">
+													 20 mins
+												</div>
+											</div>
+											</a>
+										</li>
+										<li>
+											<div class="col1">
+												<div class="cont">
+													<div class="cont-col1">
+														<div class="label label-sm label-danger">
+															<i class="fa fa-user"></i>
+														</div>
+													</div>
+													<div class="cont-col2">
+														<div class="desc">
+															 Se agregaron 2 usuarios
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col2">
+												<div class="date">
+													 24 mins
+												</div>
+											</div>
+										</li>
+										<li>
+											<div class="col1">
+												<div class="cont">
+													<div class="cont-col1">
+														<div class="label label-sm label-info">
+															<i class="fa fa-shopping-cart"></i>
+														</div>
+													</div>
+													<div class="cont-col2">
+														<div class="desc">
+															 Nueva Orden recibida
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col2">
+												<div class="date">
+													 30 mins
+												</div>
+											</div>
+										</li>
+										
+										<li>
+											<div class="col1">
+												<div class="cont">
+													<div class="cont-col1">
+														<div class="label label-sm label-default">
+															<i class="fa fa-bell-o"></i>
+														</div>
+													</div>
+													<div class="cont-col2">
+														<div class="desc">
+															 Se agregaron 2 categorias 
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col2">
+												<div class="date">
+													 2 horas
+												</div>
+											</div>
+										</li>
+										
+										
+										
+									</ul>
+								</div>
+								<div class="scroller-footer">
+									<div class="btn-arrow-link pull-right">
+										<a href="javascript:;">Ver todo</a>
+										<i class="icon-arrow-right"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+			</div>
+			
+
+
+{% endblock maincontent %}
+

@@ -1,0 +1,5 @@
+{% for category in Categories %}
+<img src="{{category.product.image.url}}"/>
+<a href="/{{category.id}}"<h1>{{category.title}}</h1></a>
+<p>{{category.description}}</p>
+{% endfor %}

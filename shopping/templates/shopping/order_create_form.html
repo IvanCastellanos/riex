@@ -1,0 +1,51 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	Crear Orden
+{% endblock subtitle %}
+{% block page-title %}
+	{% if Is_buying %}
+	Orden Actual
+	{% else %}
+	Crear Nueva Orden
+	{% endif %}
+
+{% endblock page-title %}
+
+{% block maincontent %}
+
+{% if Is_buying %}
+
+<h2>Esta actualmente en una compra, agrega productos a la orden.</h2>
+
+<a href="{% url 'shopping:order_actual' %}"><h2>Ver orden</h2></a>
+
+{% else %}
+<div class="row">
+	<div class="col-md-6">
+		<div class="portlet yellow stripe box">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-cogs"></i>Selecciona un cliente
+				</div>
+														
+			</div>
+			<div class="portlet-body">
+				
+				
+	<form method="POST" action="">{% csrf_token %}
+
+		<h3>{{ order_form.as_p }}
+</h3>
+<br>
+		<input class="btn"type="submit" value="Continuar con la orden" />
+		</form>
+			</div>
+		</div>
+	</div>
+	
+</div>
+
+
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	Agregar Cliente
+{% endblock subtitle %}
+{% block page-title %}
+	Agregar Cliente
+{% endblock page-title %}
+{% block maincontent %}
+<div class="row">
+	<div class="col-md-12">
+		<div class="portlet box blue">
+									<div class="portlet-title">
+										<div class="caption">
+											<i class="fa fa-user"></i>Llena los siguientes datos
+										</div>
+										
+									</div>
+									<div class="portlet-body form">
+										<!-- BEGIN FORM-->
+										
+										<form method="POST" action="" class="horizontal-form">
+											{% csrf_token %}
+											
+											
+											<div class="form-body">
+												<h3 class="form-section">Informacion General</h3>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															
+															<label class="control-label" for="id_company_name">Cliente:</label>
+															 <input class="form-control" id="id_company_name" maxlength="50" name="company_name" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">												
+															<label  class="control-label"for="id_rfc">RFC:</label> <input class="form-control" id="id_rfc" maxlength="13" name="rfc" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<!--/row-->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_phone_number">Phone number:</label> <input class="form-control"id="id_phone_number" maxlength="17" name="phone_number" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_email">Email:</label> <input class="form-control"id="id_email" maxlength="254" name="email" type="email" />
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<!--/row-->
+												
+												
+												<!--/row-->
+												<h3 class="form-section">Direccion</h3>
+												<div class="row">
+													<div class="col-md-6 ">
+														<div class="form-group">
+															<label class="control-label" for="id_country">Country:</label> <input class="form-control"id="id_country" maxlength="25" name="country" type="text" />
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_state">State:</label> <input class="form-control"id="id_state" maxlength="25" name="state" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_city">City:</label> <input class="form-control"id="id_city" maxlength="25" name="city" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<!--/row-->
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_colony">Colony:</label> <input class="form-control"id="id_colony" maxlength="100" name="colony" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_postal_code">Postal code:</label> <input class="form-control"id="id_postal_code" maxlength="5" name="postal_code" type="text" />
+														</div>
+													</div>
+													<!--/span-->
+												</div>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_street">Street:</label> <input class="form-control"id="id_street" maxlength="100" name="street" type="text" />
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="form-group">
+															<label class="control-label" for="id_number">Number:</label> <input class="form-control"id="id_number" maxlength="5" name="number" type="text" />
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="form-actions right">
+												<input class="btn" type="submit" value="Crear cliente" />
+											</div>
+										</form>
+										<!-- END FORM-->
+									</div>
+								</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+<p>{{ Customer.rfc }}</p>
+<p>{{ Customer.country }}</p>
+<p>{{ Customer.state }}</p>
+<p>{{ Customer.city }}</p>
+<p>{{ Customer.colony }}</p>
+<p>{{ Customer.postal_code }}</p>
+<p>{{ Customer.street }}</p>
+<p>{{ Customer.number }}</p>
+<p>{{ Customer.phone_number }}</p>
+<p>Cliente desde: {{ Customer.creation_date }}</p>

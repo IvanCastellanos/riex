@@ -1,0 +1,12 @@
+{% for order in Orders %}
+<p>{{order.creation_date}}</p>
+<p>{{order.customer}}</p>
+Products:
+{% for product in order.products.all %}
+<p> - {{product.product.title}}</p>
+{% endfor %}
+<p>{{order.status}}</p>
+<p>{{order.subtotal_cost}}</p>
+<p>{{order.total_cost}}</p>
+<p>{{order.details}}</p>
+{% endfor %}

@@ -1,0 +1,316 @@
+{% extends "__base.html" %}
+{% block subtitle %}
+	Ayuda
+{% endblock subtitle %}
+{% block page-title %}
+	FAQ & Ayuda
+{% endblock page-title %}
+
+{% block maincontent %}
+<div class="row container-fluid">
+	<div class="col-md-3">
+					<ul class="ver-inline-menu tabbable margin-bottom-10">
+						<li class="active">
+							<a data-toggle="tab" href="#tab_1">
+							<i class="fa fa-question"></i> Panel de Control </a>
+							<span class="after">
+							</span>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#tab_2">
+							<i class="fa fa-dashboard"></i> Seccion Pedidos </a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#tab_3">
+							<i class="fa fa-tasks"></i> Seccion Productos </a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#tab_4">
+							<i class="fa fa-info-circle"></i> Seccion Clientes </a>
+						</li>
+						<li>
+							<a data-toggle="tab" href="#tab_5">
+							<i class="fa fa-youtube"></i> Videos tutoriales </a>
+						</li>
+						
+						
+					</ul>
+				</div>
+				<div class="col-md-9">
+					<div class="tab-content">
+						<div id="tab_1" class="tab-pane active">
+							<div id="accordion1" class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_1">
+										1. ¿Para que sirve el Panel de Control? </a>
+										</h4>
+									</div>
+									<div id="accordion1_1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											 El panel del control es la ventana principal del sistema, permite al adminsitrador observar estadisticas sobre las ultimas ventas realizadas en la semana, asi como el promedio de dinero que entra por cada orden
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_2">
+										2. ¿Que muestra el widget "Ventas de la Ultima Semana"? </a>
+										</h4>
+									</div>
+									<div id="accordion1_2" class="panel-collapse collapse">
+										<div class="panel-body">
+											 "Ventas de la Ultima semana" muestra el total de ingresos en base a las ordenes recibidas durante los pasados 7 dias, este ingreso incluye el IVA
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#accordion1_3">
+										3. ¿Como puedo saber que producto es el mas vendido ? </a>
+										</h4>
+									</div>
+									<div id="accordion1_3" class="panel-collapse collapse">
+										<div class="panel-body">
+											 En el panel de control encontrara bajo la catgegoria "Vistazo Rapido" una tabla con los productos que mas se venden ordenados de mayor a menor
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						{# fin del primer panel #}
+						<div id="tab_2" class="tab-pane">
+							<div id="accordion2" class="panel-group">
+								<div class="panel panel-warning">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#accordion2_1">
+										1. ¿Hay algun limite en la cantidad de ordenes que se pueden hacer? </a>
+										</h4>
+									</div>
+									<div id="accordion2_1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<p>
+												 No, ninguna, se pueden hacer todas las ordenes deseadas asignandolas a un cliente, no importa si se repite
+											</p>
+											
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-danger">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#accordion2_2">
+										2. ¿Como puedo generar un nuevo pedido? </a>
+										</h4>
+									</div>
+									<div id="accordion2_2" class="panel-collapse collapse">
+										<div class="panel-body">
+											 Para agregar un pedido nuevo en el sistema, debe buscar el apartado de "Pedidos" el cual se encuentra ubicado en el menu de la parte izquierda de nuestra pantalla,
+Se desplegaran varias opciones en la cuales se encuentra"Nuevo Pedido",
+De click sobre Nuevo Pedido y a continuacion seleccione  el cliente que realiza este pedido, 
+El cliente debera estar registrado previamente, 
+De click en "Continuar con la orden", 
+Se desplegara la lista de categorias donde podrá “agregar al carrito” los productos que desee
+
+
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#accordion2_3">
+										3. ¿Como puedo ver todo el historial de ordenes? </a>
+										</h4>
+									</div>
+									<div id="accordion2_3" class="panel-collapse collapse">
+										<div class="panel-body">
+											 En el apartado de Pedidos ubicado en el menu de la parte izquierda de la pantalla daremos click para que nos despliegue un 
+submenu donde podremos ver la opcion de "Historial" que nos llevara a la lista de todos los pedidos hechos a la empresa,
+en ellos se mostrara la opcion de "Ver mas" que se encontrara en la parte derecha del pedido, donde podremos ver con detalle
+el pedido seleccionado, ademas que en el boton de "Herramientas" podremos seleccionar la opcion de "Exportar a PDF" el pedido 
+ya seleccionado.
+
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						{# fin del segundo panel#}
+						<div id="tab_3" class="tab-pane">
+							<div id="accordion3" class="panel-group">
+								<div class="panel panel-warning">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#accordion3_1">
+										¿Como puedo añadir una nueva categoria? </a>
+										</h4>
+									</div>
+									<div id="accordion3_1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<p>
+												 Ve al menu lateral y selecciona Prodcutos, a continuacion da click en categorias y se mostrara la lista de categorias existentes, en la parte de abajo da click al boton agregar categoria y rellena los datos del formulario
+											</p>
+											
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-danger">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#accordion3_2">
+										2. ¿Como puedo agregar un nuevo producto? </a>
+										</h4>
+									</div>
+									<div id="accordion3_2" class="panel-collapse collapse">
+										<div class="panel-body">
+											  Ve al menu lateral y selecciona Prodcutos, a continuacion da click en categorias y se mostrara la lista de categorias existentes, ahora entra en la categoria en la cual deseas agregar nuevo producto.
+											En la parte de abajo da click al boton agregar prodcuto y rellena los datos del formulario
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-success">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#accordion3_3">
+										3. ¿Puedo Buscar especificamente una nombre o categoria ? </a>
+										</h4>
+									</div>
+									<div id="accordion3_3" class="panel-collapse collapse">
+										<div class="panel-body">
+											 Sí. En la parte superior derecha de las categorias o de los productos encontraras una barra de busqueda, introduce un concepto a buscar y da enter. a continuacion apareceran los resultados.
+										</div>
+									</div>
+								</div>
+								
+							
+							</div>
+						</div>
+						{# fin del tercer panel#}
+						<div id="tab_4" class="tab-pane">
+							<div id="accordion4" class="panel-group">
+								<div class="panel panel-warning">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#accordion4_1">
+										¿Como añadir nuevos clientes? </a>
+										</h4>
+									</div>
+									<div id="accordion4_1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											<p>
+												Para poder dar de alta a un cliente nuevo en el sistema, deberemos buscar la opcion de "Clientes"
+la cual se encuentra en el menu de la parte izquierda de nuestra pantalla, una vez seleccionada esta opcion se desplegara un 
+menu, donde podremos observar el apartado de "Dar de alta clientes" en el cual daremos clik, se abrira una ventana donde 
+se mostraran un formulario en el cual se agregaran los datos de nuestro nuevo cliente, una vez llenado el formulario daremos 
+click en el boton de "Crear cliente", que nos llevara a nuestra lista de clientes y podremos apreciar el cliente que 
+acaba de ser agregado.
+
+											</p>
+											
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-danger">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#accordion4_2">
+										2. ¿Como puedo ver los detalles de los clientes ? </a>
+										</h4>
+									</div>
+									<div id="accordion4_2" class="panel-collapse collapse">
+										<div class="panel-body">
+											 EN el menu clientes, da click en Ver Clientes, saldra un menu con todos los lcientes guardados, da click en ver detalles y podras ver todo lo relacionado con el cliente, incluso ubicarlo en el mapa.
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						{#Final del 4 panel#}
+						<div id="tab_5" class="tab-pane">
+							<div id="accordion5" class="panel-group">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#accordion5_1">
+										1. Ver clientes </a>
+										</h4>
+									</div>
+									<div id="accordion5_1" class="panel-collapse collapse in">
+										<div class="panel-body">
+											 <iframe src="https://player.vimeo.com/video/165970495" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/165970495">Informaci&oacute;n de Clientes</a> from <a href="https://vimeo.com/user52040756">Aquario Inc</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#accordion5_2">
+										2. ¿Como ver el Historial de Pedidos? </a>
+										</h4>
+									</div>
+									<div id="accordion5_2" class="panel-collapse collapse">
+										<div class="panel-body">
+											 <iframe src="https://player.vimeo.com/video/165971094" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/165971094">Historial de Pedidos</a> from <a href="https://vimeo.com/user52040756">Aquario Inc</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#accordion5_3">
+										3. ¿Como generar nueva orden? </a>
+										</h4>
+									</div>
+									<div id="accordion5_3" class="panel-collapse collapse">
+										<div class="panel-body">
+											 <iframe src="https://player.vimeo.com/video/165971985" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/165971985">Generar Pedidos</a> from <a href="https://vimeo.com/user52040756">Aquario Inc</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#accordion5_4">
+										4. ¿Como agregar productos? </a>
+										</h4>
+									</div>
+									<div id="accordion5_4" class="panel-collapse collapse">
+										<div class="panel-body">
+											 <iframe src="https://player.vimeo.com/video/165972428" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/165972428">Agregar Productos</a> from <a href="https://vimeo.com/user52040756">Aquario Inc</a> on <a href="https://vimeo.com">Vimeo</a>.</p></div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 class="panel-title">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#accordion5_5">
+										5 Agregar Clientes </a>
+										</h4>
+									</div>
+									<div id="accordion5_5" class="panel-collapse collapse">
+										<div class="panel-body">
+											 <iframe src="https://player.vimeo.com/video/165972738" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/165972738">Agregar Clientes</a> from <a href="https://vimeo.com/user52040756">Aquario Inc</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+
+					</div>
+				</div>
+</div>
+
+{% endblock %}

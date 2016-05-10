@@ -1,0 +1,148 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    <title>Distribuidora Riex |{% block subtitle %}
+        
+    {% endblock subtitle %}</title>
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="icon" type="image/png"href="{% static 'img/icon.png'%}">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/sb-admin.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <link href="{% static 'css/components.css' %}" id="style_components" rel="stylesheet" type="text/css"/>
+   
+
+    <link href="{% static 'css/plugins.css' %}" rel="stylesheet" type="text/css"/>
+<!-- END THEME STYLES -->
+<link rel="shortcut icon" href="favicon.ico"/>
+
+   
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
+   
+</head>
+<body>
+
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="side-bar navbar navbar-inverse navbar-fixed-top" role="navigation">
+          
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'shopping:index' %}">Distribuidora Riex</a>
+            </div>
+            <!-- Top Menu Items -->
+            {% include "_nav.html" %}
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li {% block control-active %}
+                        
+                    {% endblock control-active %}>
+                        <a href="{% url 'shopping:index' %}"><i class="fa fa-fw fa-dashboard"></i> Panel de Control</a>
+                    </li>
+                    <li {% block orders-active %}
+                        
+                    {% endblock orders-active %}>
+                            <a href="javascript:;" data-toggle="collapse" data-target="#pedidos"><i class="fa fa-fw fa-tasks"></i> Pedidos <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="pedidos" class="collapse">
+                            <li>
+                                <a href="{% url 'shopping:order_create' %}"><i class="fa fa-fw fa-plus"></i>  Nuevo Pedido</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'shopping:order_list' %}"><i class="fa fa-fw fa-th"></i>  Historial </i></a>
+                            </li>
+                        </ul>
+
+                        
+                    </li>                 
+                    <li {% block products-active %}
+                        
+                    {% endblock products-active %}>
+                        <a href="javascript:;" data-toggle="collapse" data-target="#categorias"><i class="fa fa-fw fa-cubes"></i> Productos <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="categorias" class="collapse">
+                            <li>
+                                <a href="{% url 'shopping:categories_list' %}"><i class="fa fa-fw fa-th"></i>  Categorias</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
+                    <li {% block customers-active %}
+                        
+                    {% endblock customers-active %}>
+                         <a href="javascript:;" data-toggle="collapse" data-target="#clientes"><i class="fa fa-fw fa-users"></i> Clientes <i class="fa fa-fw fa-caret-down"></i></a>
+                             <ul id="clientes" class="collapse">
+                            <li>
+                                <a href="{% url 'shopping:customer_list' %}"><i class="fa fa-fw fa-users"></i>  Ver Clientes</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'shopping:customer_create' %}"><i class="fa fa-fw fa-plus"></i>  Dar de alta Cliente </i></a>
+                            </li>
+                        </ul>                       
+                    </li>
+                    <li>
+                        <a href="{% url 'shopping:help_view'   %}"><i class="fa fa-fw fa-question-circle"></i> Ayuda</a>
+                        
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-title page-header">
+                           {% block page-title %}
+                               
+                           {% endblock page-title %}
+                            
+                        </h1>
+                        
+                    </div>
+                </div>
+                {% block maincontent %}
+                
+                {% endblock maincontent %}
+
+             </div>
+                    
+            
+
+            
+
+        </div>
+
+        
+    <!-- jQuery -->
+    
+   
+<script src="{% static 'js/jquery.js' %}"></script>
+
+
+   
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+
+
+</body>
+
+</html>

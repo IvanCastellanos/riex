@@ -1,0 +1,29 @@
+{% extends "__base_registration.html" %}
+{% load i18n %}
+{% block subtitle %}
+	Log In
+{% endblock subtitle %}
+{% block class %}
+	login
+{% endblock class %}
+
+{% load i18n %}
+
+{% block maincontent %}
+<div class="logo">
+	
+	<h2 style="color:#eceef1">Riex Administracion</h2>
+	
+</div>
+<div class="content">
+	<!-- BEGIN LOGIN FORM -->
+	
+<h2 class="form-title">{% trans "Logged out" %}</h2>
+	<!-- END LOGIN FORM -->
+	<a class="btn"href="{% url 'accounts:auth_login' %}">Log in</a>
+	
+	
+</div>
+
+
+{% endblock maincontent %}

@@ -1,0 +1,41 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	Clientes
+{% endblock subtitle %}
+{% block page-title %}
+	Clientes
+{% endblock page-title %}
+{% block customers-active %}
+	class=active
+{% endblock customers-active %}
+{% block maincontent %}
+
+{% for customer in Customers %}
+<div class="col-lg-3 col-md-6">
+   <div class="panel panel-primary">
+      <div class="panel-heading">
+		<a style="color:white" class="customer" href="{% url 'shopping:customer_detail' id=customer.id %}"><h3>{{customer.company_name}}</h3></a>
+      </div>
+      <div class="panel-footer">
+         <span class="pull-left"> <a href="{% url 'shopping:customer_detail' id=customer.id %}">Ver Detalles</a></span>
+         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+         <div class="clearfix"></div>
+     </div>                           
+    </div>
+</div>
+{% endfor %}
+<div class="col-lg-3 col-md-6">
+   <div class="panel panel-green">
+      <div class="panel-heading">
+		<a style="color:white"class="customer" href="{% url 'shopping:customer_create' %}"><h3>Agregar Cliente</h3></a>
+      </div> 
+      <div class="panel-footer">
+         <span class="pull-left">Ver Detalles</span>
+         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+         <div class="clearfix"></div>
+     </div>
+
+    </div>
+</div>
+
+{% endblock %}

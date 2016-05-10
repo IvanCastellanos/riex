@@ -1,0 +1,4 @@
+{% extends "__base.html" %}
+
+{% block maincontent %}
+{% endblock %}

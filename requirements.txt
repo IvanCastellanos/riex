@@ -1,0 +1,17 @@
+Django==1.9
+django-appconf==1.0.2
+django-imagekit==3.3
+django-registration==2.0.4
+django-user-management==14.4.0
+django-wkhtmltopdf==3.0.0
+djangorestframework==3.2.5
+html5lib==0.9999999
+incuna-mail==3.0.0
+incuna-pigeon==0.1.0
+pilkit==1.1.13
+Pillow==3.2.0
+pyPdf==1.13
+PyPDF2==1.25.1
+reportlab==3.3.0
+six==1.10.0
+xhtml2pdf==0.0.6

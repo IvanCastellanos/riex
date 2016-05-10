@@ -1,0 +1,73 @@
+{% extends '__base.html' %}\
+{% block subtitle %}
+	Agregar NNueva Categoria
+{% endblock subtitle %}
+{% block products-active %}
+	class="active"
+{% endblock products-active %}
+{% block page-title %}
+	Crear nueva categoria de productos
+{% endblock page-title %}
+
+{% block maincontent %}
+<div class="row">
+	<div class="col-md-8">
+		<div class="portlet box green ">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-cubes"></i> Nueva Categoria
+							</div>
+							<div class="tools">
+								<a href="" class="collapse">
+								</a>
+								<a href="#portlet-config" data-toggle="modal" class="config">
+								</a>
+								<a href="" class="reload">
+								</a>
+								<a href="" class="remove">
+								</a>
+							</div>
+						</div>
+						<div class="portlet-body form">
+							
+							<form method="POST" enctype="multipart/form-data" action="" class="form-horizontal" role="form">
+								{% csrf_token %}
+								<div class="form-body">
+									<div class="form-group">
+										<label class="col-md-3 control-label"for="id_title">Nombre de Categoria</label> 
+										
+										<div class="col-md-9">
+											<input class="form-control" id="id_title" placeholder="Pescado"maxlength="50" name="title" type="text">
+										</div>
+									</div>
+									
+									<div class="form-group">
+										<label class="col-md-3 control-label"for="id_description">Descripcion:</label> 
+										
+										<div class="col-md-9">
+											<textarea class="form-control" cols="40" id="id_description" name="description" rows="10"></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-md-3 control-label"for="id_image">Seleccionar Imagen:</label> 
+										
+										<div class="col-md-9">
+											<input class="form-control" id="id_image" name="image" type="file">
+										</div>
+									</div>
+									<div class="form-actions right">
+												<input class="btn" type="submit" value="Crear Categoria" />
+									</div>
+								</div>
+									
+							</form>
+						</div>
+					</div>
+	</div>
+</div>
+
+
+
+
+{% endblock %}
+

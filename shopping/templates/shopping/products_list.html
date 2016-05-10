@@ -1,0 +1,54 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	Productos
+{% endblock subtitle %}
+{% block page-title %}
+
+	{{Category.title}}
+
+
+{% endblock page-title %}
+{% block maincontent %}
+<div class="row">
+	<div class="col-md-12">
+		<div style="float:right">
+		<form method='GET' action=''>
+  			<input type="text" name="q" placeholder="Buscar Productos"/>
+  			<input  class="btn"type="submit" value="Buscar"/>
+		</form>
+	</div>
+	</div>
+</div>
+<br>
+<br>
+
+<div class="row">
+	{% for product in Products %}
+	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+		
+		<a class="customer"href="{% url 'shopping:product_detail' id_category=product.category.id id_product=product.id %}">
+		<img width="300px"class="img-responsive"src="{{product.image.url}}"/>
+			<h3>{{product.title}}</h3></a>
+		<br>
+		<br>
+	</div>
+	{% endfor %}
+	<div class="row container">
+		<div class="col-md-12">
+			<a href="{% url 'shopping:product_create_from_category' id=Category.id %}" style="float:left"class="btn btn-md blue">
+			Agregar Producto
+			<i class="fa fa-plus"></i>												
+			</a>
+		</div>
+		
+	</div>
+		
+	
+</div>
+	
+
+	
+
+</div>
+
+{% endblock %}

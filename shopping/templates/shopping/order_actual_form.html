@@ -1,0 +1,152 @@
+{% extends '__base.html' %}
+{% block subttile %}
+	Orden Actual
+{% endblock subttile %}
+{% block page-title %}
+	Orden Actual
+{% endblock page-title %}
+{% block maincontent %}
+<div class="row-container">
+	<div class="col-md-12">
+		<div class="portlet">
+			<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-shopping-cart"></i>Order {{last_order.id}} <span class="hidden-480">
+								| {{last_order.creation_date}} </span>
+							</div>
+							<div class="caption" style="float:right">
+								
+								Cliente: {{last_order.customer}}
+							</div>
+							
+						</div>
+						<div class="portlet-body">
+							<div class="tabbable">
+								<ul class="nav nav-tabs nav-tabs-lg">
+									<li class="active">
+										<a href="#tab_1" data-toggle="tab">
+										Detalles </a>
+									</li>
+																		
+								</ul>
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane active" id="tab_1">
+										
+										<div class="row">
+											<div class="col-md-12 col-sm-12">
+												<div class="portlet grey-cascade box">
+													<div class="portlet-title">
+														<div class="caption">
+															<i class="fa fa-cogs"></i>Detalle de Orden Actual
+														</div>
+														
+													</div>
+													<div class="portlet-body">
+														<div class="table-responsive">
+															<table class="table table-hover table-bordered table-striped">
+															<thead>
+															<tr>
+																<th>
+																	 Producto
+																</th>
+																
+																<th>
+																	 Precio
+																</th>
+																<th>
+																	 Cantidad
+																</th>
+																<th>
+																	 Subtotal
+																</th>
+																
+															</tr>
+															</thead>
+															<tbody>
+																{% for product in last_order.products.all %}
+																		<tr>
+																<td>
+																	
+																	{{product.product.title}} 
+																</td>
+																
+																<td>
+																	 ${{product.product.price}}
+																</td>
+																
+																<td>
+																	 {{product.quantity}}
+																</td>
+																<td>
+																	{{product.subtotal_cost}}
+																</td>
+																
+															</tr>
+																{% endfor %}
+																
+															
+															
+															</tbody>
+															</table>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+											</div>
+											<div class="col-md-6">
+												<div class="well">
+													<div class="row static-info align-reverse">
+														<div class="col-md-8 name">
+															 Sub Total:
+														</div>
+														<div class="col-md-3 value">
+															 {{last_order.subtotal_cost}}
+														</div>
+													</div>
+													
+													<div class="row static-info align-reverse">
+														<div class="col-md-8 name">
+															 IVA: 
+														</div>
+														<div class="col-md-3 value">
+															 {{iva}}
+														</div>
+													</div>
+													<div class="row static-info align-reverse">
+														<div class="col-md-8 name">
+															 Total:
+														</div>
+														<div class="col-md-3 value">
+															{{last_order.total_cost}}
+														</div>
+													</div>
+													
+												</div>
+											</div>
+										</div>
+										<div class="row container-fluid">
+											<form method="POST" action="">{% csrf_token %}
+ 											 <input class="btn" type="submit" name="success" value='Aceptar orden'/>
+ 											 <a class="btn" href="{% url 'shopping:categories_list' %}">Continuar Comprando</a>
+												</form>
+
+										</div>
+									</div>
+							</div>
+
+
+
+						</div>
+		</div>
+		
+
+	</div>
+	
+</div>
+
+
+{% endblock maincontent %}

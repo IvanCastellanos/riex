@@ -1,0 +1,17 @@
+{% extends '__base.html' %}
+
+{% block maincontent %}
+{% for order in Orders %}
+<p>{{order.creation_date}}</p>
+<p>{{order.customer}}</p>
+Products:
+{% for product in order.products.all %}
+<p> - {{product.product.title}} ${{product.product.price}} {{product.quantity}}</p>
+{% endfor %}
+<p>{{order.status}}</p>
+<p>{{order.subtotal_cost}}</p>
+<p>{{order.total_cost}}</p>
+<p>{{order.details}}</p>
+{% endfor %}
+
+{% endblock maincontent %}

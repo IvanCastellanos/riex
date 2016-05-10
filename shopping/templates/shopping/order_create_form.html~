@@ -1,0 +1,8 @@
+Form
+
+<form method="POST" action="">{% csrf_token %}
+{{ order_form.as_p }}
+{{ product_form.as_p }}
+
+<input type="submit" value="Crear orden" />
+</form>

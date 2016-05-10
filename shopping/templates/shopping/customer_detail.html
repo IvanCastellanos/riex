@@ -1,0 +1,200 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	{{Customer.company_name}}
+{% endblock subtitle %}
+{% block page-title %}
+	Detalles de Cliente
+{% endblock page-title %}
+{% block customers-active %}
+	class="active"
+{% endblock customers-active %}
+{% block maincontent %}
+<div class="col-md-12">
+		<div class="portlet">
+			<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-user"></i>{{Customer.company_name}} <span class="hidden-480">
+								| {{order.creation_date}} </span>
+							</div>
+							
+						</div>
+						<div class="portlet-body">
+							<div class="tabbable">
+								<ul class="nav nav-tabs nav-tabs-lg">
+									<li class="active">
+										<a href="#tab_1" data-toggle="tab">
+										Detalles </a>
+									</li>
+									<li>
+										<a href="#tab_2" data-toggle="tab">
+										Ubicar en Mapa 
+										</a>
+									</li>
+									
+									
+								</ul>
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane active" id="tab_1">
+										<div class="row">
+											<div class="col-md-6 col-sm-12">
+												<div class="portlet blue-hoki box">
+													<div class="portlet-title">
+														<div class="caption">
+															<i class="fa fa-cogs"></i>Informacion de Cliente
+														</div>
+														
+													</div>
+													<div class="portlet-body">
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Cliente #:
+															</div>
+															<div class="col-md-7 value">
+																{{Customer.id}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Nombre:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.company_name}}
+															</div>
+														</div>
+
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Fecha de registro:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.creation_date}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 RFC:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.rfc}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Email:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.email}}
+															</div>
+														</div>
+														
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Telefono:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.phone_number}}
+															</div>
+														</div>
+													</div>		
+												</div>
+											</div>
+											
+										
+											<div class="col-md-6 col-sm-12">
+												<div class="portlet green-meadow box">
+													<div class="portlet-title">
+														<div class="caption">
+															<i class="fa fa-cogs"></i>Direccion de facturacion
+														</div>														
+													</div>
+													<div class="portlet-body">
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Pais:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.country}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Estado:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.state}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Ciudad:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.city}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Colonia:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.colony}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Codigo Postal:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.postal_code}}
+															</div>
+														</div>
+														<div class="row static-info">
+															<div class="col-md-5 name">
+																 Calle y numero:
+															</div>
+															<div class="col-md-7 value">
+																 {{Customer.street}} {{Customer.number}}
+															</div>
+														</div>
+														
+													</div>
+												</div>
+											</div>
+											
+									
+									</div>
+							</div>
+							<div class="tab-pane" id="tab_2">
+								<div class="row">
+									<div class="col-md-8">
+										<div class="portlet box grey-cascade">
+						<div class="portlet-title">
+							<div class="caption">
+								<i class="fa fa-gift"></i>Mapa
+							</div>
+							
+						</div>
+						<div class="portlet-body">
+							<iframe class="responsive"
+							  width="100%"
+							  height="450px;"
+							  frameborder="0" style="border:0"
+							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB4SHDQhytjJ5aOJJIr8BxXB5tb85etH4Q 
+							    &q={{ Customer.state }},+{{ Customer.city }},+{{ Customer.colony }},+{{ Customer.street }},+{{ Customer.number }}" allowfullscreen>
+							</iframe>
+						</div>
+					</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+		
+
+	</div>
+
+
+
+{% endblock %}

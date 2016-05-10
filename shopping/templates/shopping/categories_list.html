@@ -1,0 +1,58 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	Categorias
+{% endblock subtitle %}
+{% block page-title %}
+	Categorias
+
+		
+
+{% endblock page-title %}
+{% block products-active %}
+	class="active"
+{% endblock products-active %}
+{% block maincontent %}
+<div class="row">
+	<div class="col-md-12">
+		<div style="float:right">
+		<form method='GET' action=''>
+  			<input type="text" name="q" placeholder="Buscar categorias"/>
+  			<input  class="btn"type="submit" value="Buscar"/>
+		</form>
+	</div>
+	</div>
+</div>
+<br>
+<br>
+<div class="row container-fluid">
+
+{% for category in Categories %}
+<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+	
+		<a class="customer"href="{% url 'shopping:products_list' id=category.id %}">
+			<img  class="img-responsive"src="{{category.image.url}}" width="300px">
+			<h3>{{category.title}}</h3></a>
+
+	<h4>{{category.description}}</h4>
+	<br>
+	<br>
+
+	</div>
+
+{% endfor %}
+
+
+
+	
+</div>
+<div class="row container-fluid">
+		<div class="col-md-12">
+			<a href="{% url 'shopping:category_create'%}" style="float:left"class="btn btn-md blue">
+			Agregar Categoria
+			<i class="fa fa-plus"></i>												
+			</a>
+		</div>
+		
+	</div>
+
+{% endblock %}

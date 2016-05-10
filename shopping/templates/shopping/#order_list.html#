@@ -1,0 +1,9 @@
+{}
+
+{% for order in Orders %}
+<a href="{% url 'shopping:order_detail' id=order.id %}"><p>{{order.creation_date}}</p>
+<p>{{order.customer}}</p>
+<p>{{order.status}}</p>
+<p>{{order.total_cost}}</p>
+<p>{{order.details}}</p></a>
+{% endfor %}

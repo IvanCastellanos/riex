@@ -1,0 +1,3 @@
+{% for order in Orders %}
+<p>order.creation_date</p>
+{% endfor %}

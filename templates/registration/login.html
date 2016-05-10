@@ -1,0 +1,49 @@
+{% extends "__base_registration.html" %}
+{% load i18n %}
+{% block subtitle %}
+	Log In
+{% endblock subtitle %}
+{% block class %}
+	login
+{% endblock class %}
+{% block maincontent %}
+<div class="logo">
+	
+	<h2 style="color:#eceef1">Riex Administracion</h2>
+	
+</div>
+<div class="content">
+	<!-- BEGIN LOGIN FORM -->
+	<form class="login-form" method="post" action=".">
+		{% csrf_token %} 
+	
+		<h3 class="form-title">LOG IN</h3>
+		
+		<div class="form-group">
+			<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+			<label class="control-label" for="id_username">Username:</label>
+			<input class="form-control form-control-solid placeholder-no-fix" id="id_username" maxlength="254" name="username" type="text">
+			
+		</div>
+		<div class="form-group">
+			<label class="control-label" for="id_password">Password:</label>
+			<input class="form-control form-control-solid placeholder-no-fix" id="id_password" name="password" type="password">
+		
+		</div>
+		<div class="form-actions">
+			<input  class="btn"type="submit" value="{% trans 'Log in' %}" />
+			<input type="hidden" name="next" value="{% url 'shopping:index'%}" />			
+			
+		</div>
+		
+		
+	</form>
+	<!-- END LOGIN FORM -->
+	
+	
+</div>
+
+ 
+
+
+{% endblock %}

@@ -1,0 +1,95 @@
+{% extends '__base.html' %}
+{% block subtitle %}
+	{{Product.title}}
+{% endblock subtitle %}
+{% block page-title %}
+	{{Product.title}}
+{% endblock page-title %}
+{% block maincontent %}
+<div class="row">
+	<div class="col-md-6">
+		<img class="img-responsive"src="{{Product.image.url}}"/>
+
+	</div>
+	<div class="col-md-6">
+		<div class="portlet blue-hoki box">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-cogs"></i>Descripcion de Producto
+				</div>
+														
+			</div>
+			<div class="portlet-body">
+				<h4>{{Product.description}}</h4>
+				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic impedit eveniet, amet dolores quisquam, magni laudantium maiores odit dolorum aliquid sed! Ea ad eligendi natus voluptatem dolores cupiditate ut quae blanditiis tempora aspernatur quam ipsa praesentium eveniet dolore, consequuntur tenetur accusamus expedita nisi architecto ex! Alias est minima dignissimos esse dolore possimus debitis fugiat maiores, nobis cumque animi ut quasi qui, perspiciatis cum eius hic eaque praesentium repudiandae. Ducimus voluptatum in recusandae, culpa architecto nobis cupiditate quos enim accusamus? Harum, minus! Expedita atque facere deleniti doloribus fuga ea possimus quasi maxime, reprehenderit cupiditate saepe, magnam vero, nisi cum quas dolor!</h4>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<br>
+<div class="row">
+	<div class="col-md-3">
+		<div class="portlet green-meadow box">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-cogs"></i>Detalles de Producto
+				</div>
+														
+			</div>
+			<div class="portlet-body">
+				<div class="row static-info">
+					<div class="col-md-5 name">
+							Precio
+					</div>
+					<div class="col-md-7 value">
+							${{Product.price}}
+					</div>
+				</div>
+				<div class="row static-info">
+					<div class="col-md-5 name">
+							Cantidad en Stock:
+					</div>
+					<div class="col-md-7 value">
+							{{Product.stock}}
+					</div>
+				</div>
+				<div class="row static-info">
+					<div class="col-md-5 name">
+							Peso por Unidad:
+					</div>
+					<div class="col-md-7 value">
+							{{Product.weight}} {{Product.weight_measurement}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% if Is_buying %}
+	<div class="col-md-9">
+		<div class="portlet yellow stripe box">
+			<div class="portlet-title">
+				<div class="caption">
+					<i class="fa fa-cogs"></i>Agregar a Orden
+				</div>
+														
+			</div>
+			<div class="portlet-body">
+				<form method="POST" action="">{% csrf_token %}
+					{{form_product_unit.as_p}}
+					
+					<input  class="btn"type="submit" value="Agregar al carrito" />
+				</form>
+			</div>
+		</div>
+		
+	</div>			
+
+				{% endif %}	
+	
+</div>
+	
+
+{% endblock %}
+
+
